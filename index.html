@@ -133,14 +133,31 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background-color: var(--surface);
-            border: 1px solid rgba(255,255,255,.055);
+            background-color: var(--accent);
+            border: none;
             border-radius: 8px;
             padding: 0.75rem 1.5rem;
             font-size: 0.95rem;
-            color: var(--text);
+            font-weight: 600;
+            color: var(--bg);
             text-decoration: none;
-            transition: border-color 0.2s, background-color 0.2s;
+            transition: background-color 0.2s, transform 0.2s;
+            height: 48px;
+        }
+        .primary-cta:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+        }
+        .primary-cta i {
+            font-size: 1.1rem;
+        }
+        .primary-cta i {
+            font-size: 1.1rem;
+        }
+
+        /* Define hover accent color */
+        :root {
+            --hover-accent: #2563eb;
         }
         .primary-cta:hover {
             border-color: var(--accent);
@@ -462,37 +479,6 @@
             } catch (err) {
                 shareFeedback.textContent = "Erro ao compartilhar.";
                 console.error("Share failed:", err);
-            }
-        });
-    </script>
-</body>
-</html>
-        const shareBtn = document.getElementById('shareBtn');
-        const shareFeedback = document.getElementById('shareFeedback');
-
-        shareBtn.addEventListener('click', async () => {
-            const shareData = {
-                title: 'Matheus Gabriel da Silva | TI • Infraestrutura • Redes',
-                text: 'Matheus Gabriel da Silva — TI, infraestrutura, redes, automação e tecnologia.',
-                url: window.location.href
-            };
-
-            try {
-                if (navigator.share) {
-                    await navigator.share(shareData);
-                    shareFeedback.textContent = 'Compartilhado com sucesso!';
-                } else {
-                    // Fallback to copy
-                    await navigator.clipboard.writeText(shareData.url);
-                    shareFeedback.textContent = 'Link copiado para área de transferência!';
-                }
-                // Clear feedback after 2 seconds
-                setTimeout(() => {
-                    shareFeedback.textContent = '';
-                }, 2000);
-            } catch (err) {
-                shareFeedback.textContent = 'Erro ao compartilhar.';
-                console.error('Share failed:', err);
             }
         });
     </script>

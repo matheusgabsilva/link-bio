@@ -105,6 +105,21 @@
             50%, 100% { opacity: 0; }
         }
         .header .bio {
+        .header .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--accent);
+            text-decoration: none;
+            border: 1px solid rgba(56,189,248,.2);
+            border-radius: 4px;
+            padding: 0.3rem 0.6rem;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+        .header .back-link:hover {
+            border-color: var(--accent);
+            background-color: var(--hover);
+        }
             color: var(--muted);
             font-size: 0.95rem;
             line-height: 1.6;
@@ -402,6 +417,7 @@
                 Open to opportunities
             </div>
             <div class="name">Matheus Gabriel da Silva</div>
+            <a href="index.html" class="back-link">[ Voltar ]</a>
             <div class="subtitle">TI • Infraestrutura • Redes • Automação</div>
             <p class="bio">
                 Tecnologia, infraestrutura e automação na prática.

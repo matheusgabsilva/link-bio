@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matheus Gabriel da Silva - Link na Bio</title>
+    <title>Matheus Gabriel da Silva | TI • Infraestrutura • Redes</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -41,20 +41,20 @@
             z-index: -1;
         }
         .container {
-            max-width: 360px;
+            max-width: 420px;
             width: 90%;
             margin: 0 auto;
             padding: 2rem;
-            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
         }
         /* Avatar */
         .avatar {
             position: relative;
-            width: 96px;
-            height: 96px;
+            width: 115px;
+            height: 115px;
             margin-bottom: 1.5rem;
         }
         .avatar img {
@@ -65,44 +65,33 @@
             border: 2px solid var(--accent);
             background-color: var(--surface);
         }
-        .status-dot {
-            position: absolute;
-            bottom: 2px;
-            right: 2px;
-            width: 12px;
-            height: 12px;
-            background-color: #22C55E;
-            border-radius: 50%;
-            border: 2px solid var(--bg);
-        }
-        .status-dot::after {
-            content: "";
-            position: absolute;
-            inset: -2px;
-            border-radius: 50%;
-            border: 2px solid #22C55E;
-            opacity: 0;
-            animation: pulse 2s ease-out infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(0.8); opacity: 0; }
-            50% { opacity: 0.4; }
-            100% { transform: scale(1.8); opacity: 0; }
+        /* Availability badge */
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--accent);
+            background-color: var(--surface);
+            border: 1px solid rgba(56,189,248,.2);
+            border-radius: 4px;
+            padding: 0.3rem 0.6rem;
+            margin-top: 0.5rem;
         }
         /* Name */
         .name {
             font-family: 'Inter', sans-serif;
             font-weight: 700;
-            font-size: 1.35rem;
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
-        /* Subtitle with blinking cursor */
+        /* Subtitle */
         .subtitle {
             display: inline-flex;
             align-items: baseline;
             font-family: 'JetBrains Mono', monospace;
             color: var(--accent);
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin-bottom: 1.5rem;
             position: relative;
         }
@@ -119,39 +108,31 @@
         /* Bio */
         .bio {
             color: var(--muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             line-height: 1.6;
-            max-width: 320px;
+            max-width: 360px;
             margin: 0 auto 2rem;
-            text-align: center;
         }
-        /* Badges */
-        .badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-            margin-top: 1.5rem;
-            margin-bottom: 1.75rem;
-        }
-        .badge {
+        /* Primary CTA */
+        .primary-cta {
             display: inline-flex;
             align-items: center;
+            gap: 0.75rem;
             background-color: var(--surface);
             border: 1px solid rgba(255,255,255,.055);
-            border-radius: 6px;
-            padding: 0.4rem 0.7rem;
-            font-size: 0.85rem;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
             color: var(--text);
-            transition: border-color 0.2s, color 0.2s;
+            text-decoration: none;
+            transition: border-color 0.2s, background-color 0.2s;
         }
-        .badge i {
-            margin-right: 0.4rem;
-            font-size: 1rem;
+        .primary-cta:hover {
+            border-color: var(--accent);
+            background-color: var(--hover);
         }
-        .badge:hover {
-            border-color: rgba(56,189,248,.35);
-            color: var(--accent);
+        .primary-cta i {
+            font-size: 1.1rem;
         }
         /* Links */
         .links {
@@ -159,6 +140,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
+            margin-top: 2rem;
         }
         .link {
             position: relative;
@@ -194,19 +176,20 @@
         }
         .link-icon {
             flex-shrink: 0;
-            width: 34px;
-            height: 34px;
+            width: 44px;
+            height: 44px;
             background-color: rgba(56,189,248,.12);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 0.75rem;
+            margin-right: 1rem;
             color: var(--accent);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
         .link-text {
             flex-grow: 1;
             text-align: left;
+            padding-right: 1rem;
         }
         .link-arrow {
             flex-shrink: 0;
@@ -216,12 +199,143 @@
             align-items: center;
             justify-content: center;
             margin-left: auto;
-            margin-right: 0.5rem;
+            margin-right: 1rem;
             color: var(--accent);
             transition: transform 0.2s ease;
         }
         .link:hover .link-arrow {
             transform: translateX(3px);
+        }
+        /* Divider */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: rgba(255,255,255,.08);
+            margin: 2.5rem 0;
+        }
+        /* What I do section */
+        .whatido {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .card {
+            background-color: var(--surface);
+            border: 1px solid rgba(255,255,255,.055);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: left;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+        .card:hover {
+            border-color: var(--accent);
+            background-color: var(--hover);
+        }
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+        .card p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        /* Technologies */
+        .tech-section {
+            margin-top: 2.5rem;
+        }
+        .tech-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--surface);
+            border: 1px solid rgba(255,255,255,.055);
+            border-radius: 6px;
+            padding: 0.4rem 0.7rem;
+            font-size: 0.85rem;
+            color: var(--text);
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .tech-badge i {
+            margin-right: 0.4rem;
+            font-size: 1rem;
+        }
+        .tech-badge:hover {
+            border-color: rgba(56,189,248,.35);
+            color: var(--accent);
+        }
+        /* Contact section */
+        .contact-section {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+        .contact-section p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-section .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--surface);
+            border: 1px solid rgba(255,255,255,.055);
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text);
+            text-decoration: none;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+        .contact-section .btn:hover {
+            border-color: var(--accent);
+            background-color: var(--hover);
+        }
+        .contact-section .btn i {
+            font-size: 1rem;
+        }
+        /* Share section */
+        .share-section {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .share-section .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--surface);
+            border: 1px solid rgba(255,255,255,.055);
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            text-decoration: none;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+        .share-section .btn:hover {
+            border-color: var(--accent);
+            background-color: var(--hover);
+        }
+        .share-section .btn i {
+            font-size: 1rem;
+        }
+        .share-section .feedback {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--muted);
+            min-height: 1.2em;
         }
         /* Footer */
         .footer {
@@ -234,10 +348,9 @@
         /* Reduce motion */
         @media (prefers-reduced-motion: reduce) {
             .subtitle::after,
-            .status-dot::after {
+            .link-arrow,
+            .share-section .feedback {
                 animation: none;
-            }
-            .link-arrow {
                 transition: none;
             }
         }
@@ -248,7 +361,11 @@
         <!-- Avatar -->
         <div class="avatar">
             <img src="./matheus-ia.jpg" alt="Matheus Gabriel da Silva">
-            <div class="status-dot"></div>
+        </div>
+
+        <!-- Availability badge -->
+        <div class="availability">
+            Open to opportunities
         </div>
 
         <!-- Name -->
@@ -259,20 +376,16 @@
 
         <!-- Bio -->
         <p class="bio">
-            Entusiasta de tecnologia e sistemas. Atuo como Analista de Suporte em TI, trabalhando com infraestrutura, redes e ambientes Windows no dia a dia. Graduando em Gestão de TI (FATEC Jahu) e Ciência de Dados (UNIVESP).
+            Tecnologia, infraestrutura e automação na prática.
         </p>
 
-        <!-- Badges -->
-        <div class="badges">
-            <span class="badge"><i class="fa-brands fa-windows"></i>Windows Server</span>
-            <span class="badge"><i class="fa-solid fa-network-wired"></i>MikroTik</span>
-            <span class="badge"><i class="fa-solid fa-shield-halved"></i>pfSense</span>
-            <span class="badge"><i class="fa-solid fa-server"></i>VMware ESXi</span>
-            <span class="badge"><i class="fa-brands fa-microsoft"></i>Office 365</span>
-            <span class="badge"><i class="fa-solid fa-wifi"></i>UniFi</span>
-        </div>
+        <!-- Primary CTA -->
+        <a href="portfolio.html" class="primary-cta">
+            Meu portfólio
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
-        <!-- Links -->
+        <!-- Social Links -->
         <div class="links">
             <a href="https://github.com/matheusgabsilva" target="_blank" rel="noopener noreferrer" class="link">
                 <div class="link-icon"><i class="fa-brands fa-github"></i></div>
@@ -296,8 +409,99 @@
             </a>
         </div>
 
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- What I do -->
+        <div class="whatido">
+            <div class="card">
+                <h3>Redes & Infraestrutura</h3>
+                <p>Redes, conectividade, ambientes corporativos e infraestrutura.</p>
+            </div>
+            <div class="card">
+                <h3>Servidores & Virtualização</h3>
+                <p>Servidores, virtualização e administração de ambientes.</p>
+            </div>
+            <div class="card">
+                <h3>Automação & Sistemas</h3>
+                <p>Automação de processos, ferramentas e integração de sistemas.</p>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Technologies -->
+        <div class="tech-section">
+            <h3 class="tech-title">Tecnologias</h3>
+            <div class="tech-badges">
+                <span class="tech-badge"><i class="fa-brands fa-windows"></i>Windows Server</span>
+                <span class="tech-badge"><i class="fa-solid fa-network-wired"></i>MikroTik</span>
+                <span class="tech-badge"><i class="fa-solid fa-shield-halved"></i>pfSense</span>
+                <span class="tech-badge"><i class="fa-solid fa-server"></i>VMware ESXi</span>
+                <span class="tech-badge"><i class="fa-brands fa-microsoft"></i>Microsoft 365</span>
+                <span class="tech-badge"><i class="fa-solid fa-wifi"></i>UniFi</span>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Contact -->
+        <div class="contact-section">
+            <p>Vamos conversar?</p>
+            <p>Entre em contato para oportunidades, projetos ou networking.</p>
+            <a href="https://linkedin.com/in/matheusgabsilva" target="_blank" rel="noopener noreferrer" class="btn">
+                <i class="fa-brands fa-linkedin"></i> Entrar em contato
+            </a>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Share -->
+        <div class="share-section">
+            <p>Compartilhar perfil</p>
+            <button id="shareBtn" class="btn">
+                <i class="fa-solid fa-share-from-square"></i> Compartilhar
+            </button>
+            <div class="feedback" id="shareFeedback"></div>
+        </div>
+
         <!-- Footer -->
         <div class="footer">matheusgabsilva.digital</div>
     </div>
+
+    <script>
+        // Share functionality
+        const shareBtn = document.getElementById('shareBtn');
+        const shareFeedback = document.getElementById('shareFeedback');
+
+        shareBtn.addEventListener('click', async () => {
+            const shareData = {
+                title: 'Matheus Gabriel da Silva | TI • Infraestrutura • Redes',
+                text: 'Matheus Gabriel da Silva — TI, infraestrutura, redes, automação e tecnologia.',
+                url: window.location.href
+            };
+
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                    shareFeedback.textContent = 'Compartilhado com sucesso!';
+                } else {
+                    // Fallback to copy
+                    await navigator.clipboard.writeText(shareData.url);
+                    shareFeedback.textContent = 'Link copiado para área de transferência!';
+                }
+                // Clear feedback after 2 seconds
+                setTimeout(() => {
+                    shareFeedback.textContent = '';
+                }, 2000);
+            } catch (err) {
+                shareFeedback.textContent = 'Erro ao compartilhar.';
+                console.error('Share failed:', err);
+            }
+        });
+    </script>
 </body>
 </html>

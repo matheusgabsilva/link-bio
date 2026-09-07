@@ -378,11 +378,6 @@
             <img src="./matheus-ia.jpg" alt="Matheus Gabriel da Silva">
         </div>
 
-        <!-- Availability badge -->
-        <div class="availability">
-            Open to opportunities
-        </div>
-
         <!-- Name -->
         <div class="name">Matheus Gabriel da Silva</div>
 
@@ -404,72 +399,24 @@
         <div class="links">
             <a href="https://github.com/matheusgabsilva" target="_blank" rel="noopener noreferrer" class="link">
                 <div class="link-icon"><i class="fa-brands fa-github"></i></div>
-                <div class="link-text">GitHub</div>
+                <div class="link-text">GitHub<br><span class="link-description">Meus projetos e experimentos</span></div>
                 <div class="link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </a>
             <a href="https://linkedin.com/in/matheusgabsilva" target="_blank" rel="noopener noreferrer" class="link">
                 <div class="link-icon"><i class="fa-brands fa-linkedin"></i></div>
-                <div class="link-text">LinkedIn</div>
+                <div class="link-text">LinkedIn<br><span class="link-description">Experi&ecirc;ncia profissional</span></div>
                 <div class="link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </a>
             <a href="https://instagram.com/matheusgabsilva" target="_blank" rel="noopener noreferrer" class="link">
                 <div class="link-icon"><i class="fa-brands fa-instagram"></i></div>
-                <div class="link-text">Instagram</div>
+                <div class="link-text">Instagram<br><span class="link-description">Conte&uacute;do e vida pessoal</span></div>
                 <div class="link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </a>
             <a href="https://twitter.com/matheusgabsilva" target="_blank" rel="noopener noreferrer" class="link">
                 <div class="link-icon"><i class="fa-brands fa-x-twitter"></i></div>
-                <div class="link-text">X/Twitter</div>
+                <div class="link-text">X/Twitter<br><span class="link-description">Pensamentos e atualizações</span></div>
                 <div class="link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </a>
-        </div>
-
-        <!-- Divider -->
-        <div class="divider"></div>
-
-        <!-- What I do -->
-        <div class="whatido">
-            <div class="card">
-                <h3>Redes & Infraestrutura</h3>
-                <p>Redes, conectividade, ambientes corporativos e infraestrutura.</p>
-            </div>
-            <div class="card">
-                <h3>Servidores & Virtualização</h3>
-                <p>Servidores, virtualização e administração de ambientes.</p>
-            </div>
-            <div class="card">
-                <h3>Automação & Sistemas</h3>
-                <p>Automação de processos, ferramentas e integração de sistemas.</p>
-            </div>
-        </div>
-
-        <!-- Divider -->
-        <div class="divider"></div>
-
-        <!-- Technologies -->
-        <div class="tech-section">
-            <h3 class="tech-title">Tecnologias</h3>
-            <div class="tech-badges">
-                <span class="tech-badge"><i class="fa-brands fa-windows"></i>Windows Server</span>
-                <span class="tech-badge"><i class="fa-solid fa-network-wired"></i>MikroTik</span>
-                <span class="tech-badge"><i class="fa-solid fa-shield-halved"></i>pfSense</span>
-                <span class="tech-badge"><i class="fa-solid fa-server"></i>VMware ESXi</span>
-                <span class="tech-badge"><i class="fa-brands fa-microsoft"></i>Microsoft 365</span>
-                <span class="tech-badge"><i class="fa-solid fa-wifi"></i>UniFi</span>
-            </div>
-        </div>
-
-        <!-- Divider -->
-        <div class="divider"></div>
-
-        <!-- Contact -->
-        <div class="contact-section">
-            <p>Vamos conversar?</p>
-            <p>Entre em contato para oportunidades, projetos ou networking.</p>
-            <a href="https://linkedin.com/in/matheusgabsilva" target="_blank" rel="noopener noreferrer" class="btn">
-                <i class="fa-brands fa-linkedin"></i> Entrar em contato
-            </a>
-        </div>
 
         <!-- Divider -->
         <div class="divider"></div>
@@ -489,6 +436,37 @@
 
     <script>
         // Share functionality
+        const shareBtn = document.getElementById("shareBtn");
+        const shareFeedback = document.getElementById("shareFeedback");
+
+        shareBtn.addEventListener("click", async () => {
+            const shareData = {
+                title: "Matheus Gabriel da Silva | TI • Infraestrutura • Redes",
+                text: "Matheus Gabriel da Silva — TI, infraestrutura, redes, automação e tecnologia.",
+                url: window.location.href
+            };
+
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                    shareFeedback.textContent = "Compartilhado com sucesso!";
+                } else {
+                    // Fallback to copy
+                    await navigator.clipboard.writeText(shareData.url);
+                    shareFeedback.textContent = "Link copiado para área de transferência!";
+                }
+                // Clear feedback after 2 seconds
+                setTimeout(() => {
+                    shareFeedback.textContent = "";
+                }, 2000);
+            } catch (err) {
+                shareFeedback.textContent = "Erro ao compartilhar.";
+                console.error("Share failed:", err);
+            }
+        });
+    </script>
+</body>
+</html>
         const shareBtn = document.getElementById('shareBtn');
         const shareFeedback = document.getElementById('shareFeedback');
 
